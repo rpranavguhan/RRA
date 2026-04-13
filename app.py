@@ -296,7 +296,8 @@ def planner_agent(topic: str, model: str = MODEL_NAME) -> list[str]:
     2. NO CHAINING: Never use 'then', 'and', 'followed by', or ';' to link tasks for different agents in one step.
     3. ATOMICITY: If you need an editor to revise AND a writer to finalize, these MUST be two separate steps.
     4. Format: 'Use the [agent_name] to [specific task]'.
-    5. Do not extend more than 4 steps
+    5. Do NOT extend more than 4 steps.
+    6. Do NOT make research agent call multiple tools in a step.
 
     Available agents:
     - research_agent (searches web, Wikipedia, and arXiv)
@@ -304,7 +305,7 @@ def planner_agent(topic: str, model: str = MODEL_NAME) -> list[str]:
     - editor_agent (reflects, critiques, and suggests improvements)
 
     Constraints:
-    - Do not exceed 5 steps total.
+    - Research agent should handle not more than 5000 tokens in a call.
     - The editor_agent must be called at least once.
     - The final step must be the writer_agent generating the complete research report.
     - Do not include explanation text — return ONLY the Python list.
@@ -580,7 +581,7 @@ def executor_agent(topic, plan_steps, model: str = MODEL_NAME, limit_steps: bool
 
             if agent_name=="research_agent":
                 
-              agent_model=LARGE_MODEL_NAME 
+              pass
 
             else:
                 
