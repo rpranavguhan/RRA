@@ -1,0 +1,7 @@
+streamlit
+openai
+tavily-python
+wikipedia
+python-dotenv
+ipython
+requests
