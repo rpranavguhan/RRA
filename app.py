@@ -590,7 +590,7 @@ def executor_agent(topic, plan_steps, model: str = MODEL_NAME, limit_steps: bool
             
                     context = context +"\n"+ "\n".join([
                         f"Step {j+1} executed by {a}:\n{r}"
-                        for j, (s, a, r) in enumerate(history[:-1])
+                        for j, (s, a, r) in enumerate(history[-1:])
                     ])   
                     
                 else:
