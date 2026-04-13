@@ -12,7 +12,6 @@ with st.sidebar:
     topic = st.text_input("Research Topic", placeholder="e.g., Attention Is All You Need")
     run_button = st.button("Start Research")
 
-
 # --- Standard library
 from datetime import datetime
 import re
