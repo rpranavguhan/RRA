@@ -9,7 +9,7 @@ st.markdown("Generate deep research reports using a multi-agent workflow (Planne
 # --- Sidebar for Configuration ---
 with st.sidebar:
     st.header("Configuration")
-    topic = st.text_input("Research Topic", placeholder="e.g., Mercury: Ultra-Fast Language Models Based on Diffusion")
+    topic = st.text_input("Research Topic", placeholder="e.g., Attention Is All You Need")
     run_button = st.button("Start Research")
 
 
