@@ -456,7 +456,7 @@ def writer_agent(task: str, model: str = MODEL_NAME) -> str:
     response = CLIENT.chat.completions.create(
         model=model,
         messages=messages,
-        temperature=1.0
+        temperature=0
     )
 
     return response.choices[0].message.content
@@ -490,7 +490,7 @@ def editor_agent(task: str, model: str = MODEL_NAME) -> str:
     response = CLIENT.chat.completions.create(
         model=model,
         messages=messages,
-        temperature=0.7
+        temperature=0
     )
 
     return response.choices[0].message.content
@@ -559,7 +559,7 @@ def executor_agent(topic, plan_steps, model: str = MODEL_NAME, limit_steps: bool
 
         Only respond with a valid JSON object. Do not include explanations or markdown formatting.
 
-        Instruction: "{step}"
+        Instruction: {step}
         """
         response = CLIENT.chat.completions.create(
             model=model,
