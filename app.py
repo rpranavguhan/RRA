@@ -442,6 +442,7 @@ def writer_agent(task: str, model: str = MODEL_NAME) -> str:
         "5. Do NOT include any self-evaluation or concluding remarks about the report's own quality."
         "6. Do NOT include templates like 'References:[List of references with corresponding DOIs or URLs]'"
         "7. Do NOT give the return the result as plain text instead of report structured markdown"
+        "8. Do NOT include feedback from editor_agent like 'Note: Please replace [Insert Figure 1] with the actual figure.' "
     )
 
     # Define the system msg by using the system_prompt and assigning the role of system
